@@ -13,7 +13,8 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
