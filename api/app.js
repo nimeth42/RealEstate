@@ -1,5 +1,5 @@
 import express from "express";
-import authRoute from "./routes/post.route.js";
+import authRoute from "./routes/auth.route.js";
 import postRoute from "./routes/post.route.js";
 
 
@@ -11,5 +11,5 @@ app.use("/api/posts", postRoute);
 app.use("/api/auth", authRoute);
 
 app.listen(8800, () => {
-    console.log("Server is up and runniing!"); 
+    console.log("Server is up and running!"); 
 });
