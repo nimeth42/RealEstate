@@ -26,8 +26,18 @@ export const register = async (req, res) => {
     res.status(500).json({message: "Faild to create user!"});
 }
 };
-export const login = (req, res)=>{
-    //db operations
+export const login = async (req, res)=>{
+    const { username, password} = req.body;
+    try{
+        //Check if the user Exists
+        const user = await prisma.user.findUnique({
+            where:{username}
+        })
+    }
+    catch(err){
+        console.log(first)
+        res.status(500).json{message:"Faild to login!"}
+    }
 };
 export const logout = (req, res)=>{
     //db operations
