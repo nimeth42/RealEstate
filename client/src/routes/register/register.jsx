@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function Register() {
 
   const handleSubmit = (e) => {
+    e.preventDefault()
 const formData = new FormData(e.target);
 
 const username = formData.get("username")
