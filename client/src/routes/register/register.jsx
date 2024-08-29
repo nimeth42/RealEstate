@@ -4,10 +4,10 @@ import axios from "axios"
 import { useState } from "react";
 
 function Register() {
-const[error,setError] = useState
-]
+const[error,setError] = useState("")
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
 const formData = new FormData(e.target);
 
@@ -17,12 +17,14 @@ const password = formData.get("password");
 
 try{
 
-  const res = await axios.post("localhost:8800/api/auth/register",{
+  const res = await axios.post("http://localhost:8800/api/auth/register",{
     username,email,password
   })
 
+  console.log(res.data)
 }catch(err){
   console.log(err)
+  //setError
 
 }
 

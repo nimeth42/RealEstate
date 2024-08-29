@@ -18,7 +18,7 @@ function App() {
       children:[
         {
           path:"/",
-          element:<HomePage/>
+          element:<Register/>
         },
         {
           path:"/list",
@@ -37,8 +37,8 @@ function App() {
           element:<Login/>
         },
         {
-          path:"/register",
-          element:<Register/>
+          path:"/home",
+          element:<HomePage/>
         }
       ]
     }
