@@ -1,12 +1,12 @@
 import "./register.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"
 import { useState } from "react";
 
 function Register() {
 const[error,setError] = useState("")
 
-
+const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault()
 const formData = new FormData(e.target);
@@ -21,11 +21,10 @@ try{
     username,email,password
   })
 
-  console.log(res.data)
+  navigate("/login")
 }catch(err){
   console.log(err)
-  //setError
-
+  setError(err.response.data.message)
 }
 
 console.log(username,email,password);
@@ -40,6 +39,7 @@ console.log(username,email,password);
           <input name="email" type="text" placeholder="Email" />
           <input name="password" type="password" placeholder="Password" />
           <button >Register</button>
+          {error && <span>{error}</span>}
           <Link to="/login">Do you have an account?</Link>
         </form>
       </div>
