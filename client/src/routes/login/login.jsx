@@ -1,5 +1,5 @@
 import "./login.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import apiRequest from "../../lib/apiRequest";
 
@@ -20,10 +20,14 @@ const password = formData.get("password");
 try{
 
   const res = await apiRequest.post("/auth/register",{
-    username,email,password
-  })
+    username,
+    password,
+  });
 
-  navigate("/login")
+  console.log(res)
+
+  //navigate("/login")
+
 }catch(err){
   console.log(err)
   setError(err.response.data.message)
