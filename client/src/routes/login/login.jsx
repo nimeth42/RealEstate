@@ -7,10 +7,12 @@ function Login() {
   const [error,setError] = useState("")
   const [isLoarding,setisLoarding] = useState("false")
 
-const navigate = useNavigate()
+const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setisLoarding(true);
+    setError("")
     
 const formData = new FormData(e.target);
 
