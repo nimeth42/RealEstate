@@ -11,6 +11,8 @@ const[isLoarding,setisLoarding] = useState(false)
 const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setisLoarding(true);
+    setError("")
 const formData = new FormData(e.target);
 
 setisLoarding(true)

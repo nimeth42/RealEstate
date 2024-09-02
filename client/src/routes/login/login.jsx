@@ -9,8 +9,9 @@ function Login() {
 
 const navigate = useNavigate()
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setisLoarding(true)
+    e.preventDefault();
+    setisLoarding(true);
+    
 const formData = new FormData(e.target);
 
 const username = formData.get("username");
