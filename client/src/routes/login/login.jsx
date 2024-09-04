@@ -9,6 +9,14 @@ function Login() {
 
 const navigate = useNavigate();
 
+  /**
+   * Handles form submission
+   * 
+   * Submits login credentials to API and navigates to login page on success
+   * 
+   * @param {Event} e - Form submission event
+   */
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setisLoarding(true);
