@@ -16,7 +16,7 @@ const navigate = useNavigate();
    * 
    * @param {Event} e - Form submission event
    */
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setisLoarding(true);
@@ -35,7 +35,7 @@ try{
     password,
   });
 
-  console.log(res)
+  localStorage.setItem("user", JSON.stringify(res.data));
 
   //navigate("/login")
 
