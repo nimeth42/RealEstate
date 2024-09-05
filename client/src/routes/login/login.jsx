@@ -4,7 +4,7 @@ import { useState } from "react";
 import apiRequest from "../../lib/apiRequest";
 
 function Login() {
-  const [error,setError] = useState("")
+  const [error,setError] = useState("");
   const [isLoarding,setisLoarding] = useState(false);
 
 const navigate = useNavigate();
@@ -20,36 +20,32 @@ const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setisLoarding(true);
-    setError("")
-    
-const formData = new FormData(e.target);
+    setError("");
+    const formData = new FormData(e.target);
 
-const username = formData.get("username");
-const email = formData.get("email");
-const password = formData.get("password");
+    const username = formData.get("username");
+    const password = formData.get("password");
 
-try{
+    try{
+      const res = await apiRequest.post("/auth/login",{
+        username,
+        password,
+      });
 
-  const res = await apiRequest.post("/auth/register",{
-    username,
-    password,
-  });
+      localStorage.setItem("user", JSON.stringify(res.data));
 
-  localStorage.setItem("user", JSON.stringify(res.data));
+      navigate("/");
 
-  navigate("/")
+    }catch(err){
+      console.log(err)
+      setError(err.response.data.message);
+    }finally{
+      setisLoarding(false);
+    }
 
-}catch(err){
-  console.log(err)
-  setError(err.response.data.message)
-  setisLoarding(false);
-}finally{
-  setisLoarding(false)
-}
+    console.log(username,email,password);
 
-console.log(username,email,password);
-
-  }; 
+      }; 
   return (
     <div className="login">
       <div className="formContainer">
