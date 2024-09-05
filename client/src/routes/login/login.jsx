@@ -5,7 +5,7 @@ import apiRequest from "../../lib/apiRequest";
 
 function Login() {
   const [error,setError] = useState("")
-  const [isLoarding,setisLoarding] = useState("false")
+  const [isLoarding,setisLoarding] = useState(false);
 
 const navigate = useNavigate();
 
@@ -37,7 +37,7 @@ try{
 
   localStorage.setItem("user", JSON.stringify(res.data));
 
-  //navigate("/login")
+  navigate("/")
 
 }catch(err){
   console.log(err)
