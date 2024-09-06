@@ -15,3 +15,4 @@ export const shouldBeLoggedIn = async (req,res)=>{
 export const shouldBeAdmin = async (req,res)=>{
     
 };
+

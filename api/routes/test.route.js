@@ -1,6 +1,6 @@
 import express from "express";
-import { shouldBeLoggedIn } from "../controllers/test.controler";
-import { shouldBeAdmin } from "../controllers/test.controler";
+import { shouldBeLoggedIn } from "../controllers/test.controller.js";
+import { shouldBeAdmin } from "../controllers/test.controller.js";
 
 const router = express.Router() 
 
