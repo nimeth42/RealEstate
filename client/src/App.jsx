@@ -37,7 +37,7 @@ function App() {
           element:<Login/>
         },
         {
-          path:"/home",
+          path:"/homepage",
           element:<HomePage/>
         }
       ]
